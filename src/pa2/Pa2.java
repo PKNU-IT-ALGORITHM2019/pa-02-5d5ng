@@ -22,7 +22,7 @@ public class Pa2 {
 	void process_command() {
 		
 		try {
-			Scanner Fin=new Scanner (new File("input1.txt"));
+			Scanner Fin=new Scanner (new File("input5.txt"));
 			N=Fin.nextInt();
 			city=new Point [N];
 			route= new int[N];
@@ -41,7 +41,7 @@ public class Pa2 {
 			System.exit(1);
 		}
 
-		tourD(0,0);
+		tourD(1,0); //0번 도시는 고정시키고 시작
 
 		System.out.print("answer:\n"+min+"\n[");
 		for(int i=0;i<N;i++) {
@@ -64,7 +64,7 @@ public class Pa2 {
 
 	}
 
-	public  double distance(int p1,int p2) {
+	public  double distance(int p1,int p2) { //두 도시사이의 거리를 구하는 함수
 		if(p1<0 || p2<0) return 0;
 		double disx=city[p2].x-city[p1].x;
 		double disy=city[p2].y-city[p1].y;
